@@ -1,2 +1,0 @@
-class Challenge01(ChallengeBase):
-  ChallengeBase(1)
