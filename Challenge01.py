@@ -13,17 +13,33 @@ for row in data:
   firstValues.append(int(values[0]))
   secondValues.append(int(values[1]))
 
-firstValues.sort()
-secondValues.sort()
+def partOne():
+  firstValues.sort()
+  secondValues.sort()
 
-if len(firstValues) != len(secondValues):
-  print("Data is not valid")
-  exit()
+  if len(firstValues) != len(secondValues):
+    print("Data is not valid")
+    exit()
 
-totalDiff = 0
-for row in enumerate(firstValues):
-  i = row[0]
-  rowDiff = abs(firstValues[i] - secondValues[i])
-  totalDiff += rowDiff
+  totalDiff = 0
+  for row in enumerate(firstValues):
+    i = row[0]
+    rowDiff = abs(firstValues[i] - secondValues[i])
+    totalDiff += rowDiff
 
-print(totalDiff)
+  print(totalDiff)
+
+def partTwo():
+  for row in enumerate(firstValues):
+    i = row[0]
+    
+
+def partTwo():
+  totalSum = 0
+  for value in firstValues:
+    fA = secondValues.count(value)
+    totalSum += value * fA
+
+  print(totalSum)
+
+partTwo()
