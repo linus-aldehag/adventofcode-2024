@@ -1,45 +1,39 @@
 from ChallengeBase import ChallengeBase
 
-print("Starting Challenge 1")
-
 challenge = ChallengeBase(1)
 
-firstValues = list()
-secondValues = list() 
+first_values = list()
+second_values = list()
 
-data = challenge.LoadData()
-for row in data:
-  values = row.split()
-  firstValues.append(int(values[0]))
-  secondValues.append(int(values[1]))
+data = challenge.load_data()
+for data_row in data:
+  values = data_row.split()
+  first_values.append(int(values[0]))
+  second_values.append(int(values[1]))
 
-def partOne():
-  firstValues.sort()
-  secondValues.sort()
+def part_one():
+  first_values.sort()
+  second_values.sort()
 
-  if len(firstValues) != len(secondValues):
+  if len(first_values) != len(second_values):
     print("Data is not valid")
     exit()
 
-  totalDiff = 0
-  for row in enumerate(firstValues):
+  total_diff = 0
+  for row in enumerate(first_values):
     i = row[0]
-    rowDiff = abs(firstValues[i] - secondValues[i])
-    totalDiff += rowDiff
+    row_diff = abs(first_values[i] - second_values[i])
+    total_diff += row_diff
 
-  print(totalDiff)
+  print(total_diff)
 
-def partTwo():
-  for row in enumerate(firstValues):
-    i = row[0]
-    
+def part_two():
+  total_sum = 0
+  for value in first_values:
+    f_a = second_values.count(value)
+    total_sum += value * f_a
 
-def partTwo():
-  totalSum = 0
-  for value in firstValues:
-    fA = secondValues.count(value)
-    totalSum += value * fA
+  print(total_sum)
 
-  print(totalSum)
-
-partTwo()
+part_one()
+part_two()
